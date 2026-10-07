@@ -1,71 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <title>Diwa Game Zone</title>
 
+
 <style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
 
-    background:
-        radial-gradient(circle at 20% 20%, #164d3c 0%, transparent 35%),
-        radial-gradient(circle at 80% 80%, #0b5943 0%, transparent 35%),
-        linear-gradient(135deg, #020806, #071a13, #020806);
+/* =========================
+   BODY
+========================= */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
     color: white;
+
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            #164d3c 0%,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 80%,
+            #0b5943 0%,
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020806,
+            #071a13,
+            #020806
+        );
 }
 
-/* Background bubbles */
+
+/* =========================
+   BACKGROUND BUBBLES
+========================= */
+
 .bubble {
+
     position: fixed;
+
     border-radius: 50%;
+
     pointer-events: none;
+
     filter: blur(3px);
+
     opacity: 0.25;
 }
 
+
 .bubble-1 {
+
     width: 230px;
+
     height: 230px;
+
     background: #16e39a;
+
     top: -100px;
+
     left: -80px;
 }
 
+
 .bubble-2 {
+
     width: 300px;
+
     height: 300px;
+
     background: #0b8f69;
+
     bottom: -140px;
+
     right: -100px;
 }
 
+
 .bubble-3 {
+
     width: 120px;
+
     height: 120px;
+
     background: #63ffd0;
+
     top: 15%;
+
     right: 15%;
+
     opacity: 0.12;
 }
 
-/* Main box */
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
 .container {
+
     width: 92%;
+
     max-width: 430px;
 
     padding: 45px 25px;
@@ -74,19 +148,30 @@ body {
 
     border-radius: 28px;
 
-    background: rgba(3, 18, 13, 0.68);
+    background:
+        rgba(3, 18, 13, 0.68);
 
-    border: 1px solid rgba(255,255,255,0.12);
+    border:
+        1px solid rgba(255,255,255,0.12);
 
-    backdrop-filter: blur(15px);
+    backdrop-filter:
+        blur(15px);
 
     box-shadow:
-        0 20px 70px rgba(0,0,0,0.55);
+        0 20px 70px
+        rgba(0,0,0,0.55);
+
 }
 
-/* Logo */
+
+/* =========================
+   LOGO
+========================= */
+
 .logo {
+
     width: 220px;
+
     height: 220px;
 
     object-fit: contain;
@@ -96,14 +181,23 @@ body {
     margin: 0 auto 30px;
 
     filter:
-        drop-shadow(0px 12px 25px rgba(0,0,0,0.5));
+        drop-shadow(
+            0px 12px 25px
+            rgba(0,0,0,0.5)
+        );
 }
 
-/* Download button */
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
 .download-btn {
+
     display: inline-flex;
 
     align-items: center;
+
     justify-content: center;
 
     gap: 10px;
@@ -122,158 +216,516 @@ body {
 
     font-weight: bold;
 
-    background: linear-gradient(
-        135deg,
-        #68ffd1,
-        #13c98a
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #68ffd1,
+            #13c98a
+        );
 
     box-shadow:
-        0 12px 30px rgba(19,201,138,0.30);
+        0 12px 30px
+        rgba(19,201,138,0.30);
 
     transition: 0.25s;
+
 }
+
 
 .download-btn:hover {
-    transform: translateY(-4px);
+
+    transform:
+        translateY(-4px);
 
     box-shadow:
-        0 18px 38px rgba(19,201,138,0.45);
+        0 18px 38px
+        rgba(19,201,138,0.45);
+
 }
 
-/* Small text */
+
+/* =========================
+   REDIRECT TIMER
+========================= */
+
+.redirect-message {
+
+    margin-top: 22px;
+
+    font-size: 14px;
+
+    color: #b8ccc5;
+
+}
+
+
+#countdown {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #68ffd1;
+
+}
+
+
+/* =========================
+   SMALL TEXT
+========================= */
+
 .small-text {
-    margin-top: 20px;
+
+    margin-top: 18px;
 
     font-size: 12px;
 
     color: #9db0aa;
+
 }
 
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
+
 @media (max-width: 500px) {
 
     .container {
-        padding: 38px 20px;
+
+        padding:
+            38px 20px;
+
     }
+
 
     .logo {
+
         width: 190px;
+
         height: 190px;
+
     }
 
+
     .download-btn {
+
         width: 90%;
+
     }
+
 }
+
 </style>
 
 </head>
 
+
 <body>
 
-<!-- Background bubbles -->
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
 <div class="bubble bubble-1"></div>
+
 <div class="bubble bubble-2"></div>
+
 <div class="bubble bubble-3"></div>
 
 
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
 <div class="container">
 
+
     <!-- LOGO -->
+
     <img
+
         id="logo"
+
         class="logo"
+
         src="logo.png"
-        alt="New New New "
+
+        alt="Diwa Game Zone"
+
     >
+
 
 
     <!-- DOWNLOAD BUTTON -->
 
     <a
+
         id="downloadButton"
+
         class="download-btn"
+
         href="#"
+
     >
-        <span>⏬</span>
-        <span id="buttonText">Download Now</span>
+
+        <span>⬇</span>
+
+        <span id="buttonText">
+            Download Now
+        </span>
+
     </a>
+
+
+
+    <!-- REDIRECT MESSAGE -->
+
+    <div
+
+        id="redirectMessage"
+
+        class="redirect-message"
+
+    >
+
+        Redirecting in
+
+        <span id="countdown">
+            5
+        </span>
+
+        seconds...
+
+    </div>
+
+
+
+    <!-- SMALL TEXT -->
+
+    <div class="small-text">
+
+        Fast • Simple • Mobile Friendly
+
+    </div>
 
 
 </div>
 
 
+
 <script>
 
 /* =====================================================
-   CUSTOMIZE YOUR LANDING PAGE HERE
+   CUSTOMIZE YOUR LANDING PAGE
    ===================================================== */
+
 
 const SETTINGS = {
 
-    /* Logo file name */
+
+    /* ---------------------------------
+       LOGO
+       ---------------------------------
+
+       Put your logo in the same folder
+       as this HTML file.
+
+       Example:
+
+       logo.png
+
+       or
+
+       diwa-logo.png
+    */
+
     logo: "https://i.ibb.co/NgZJkjmJ/ms-nviqn-512-908386895.jpg",
 
 
-    /* 
-       Download button:
+
+    /* ---------------------------------
+       DOWNLOAD BUTTON
+       ---------------------------------
+
        true  = Show button
+
        false = Hide button
     */
+
     showDownloadButton: false,
 
 
-    /* Your download link */
-    downloadURL: "https://example.com/download.apk",
+
+    /* ---------------------------------
+       DOWNLOAD LINK
+       ---------------------------------
+
+       Put your actual APK/download
+       link here.
+    */
+
+    downloadURL:
+        "https://example.com/download.apk",
 
 
-    /* Button text */
-    buttonText: "Download Now",
+
+    /* ---------------------------------
+       BUTTON TEXT
+       --------------------------------- */
+
+    buttonText:
+        "Download APK",
 
 
-    /* Browser title */
-    pageTitle: "Dilwakus"
+
+    /* ---------------------------------
+       AUTOMATIC REDIRECT
+       ---------------------------------
+
+       true  = Enable redirect
+
+       false = Disable redirect
+    */
+
+    enableAutoRedirect: false,
+
+
+
+    /* ---------------------------------
+       REDIRECT TIME
+
+       Time is in seconds.
+
+       Example:
+
+       5  = 5 seconds
+
+       10 = 10 seconds
+
+       15 = 15 seconds
+
+       30 = 30 seconds
+    */
+
+    redirectTime: 5,
+
+
+
+    /* ---------------------------------
+       PAGE TITLE
+       --------------------------------- */
+
+    pageTitle:
+        "Diwa Om"
 
 };
 
 
 /* =====================================================
-   DO NOT CHANGE BELOW
-   ===================================================== */
-
-document.title = SETTINGS.pageTitle;
+   DO NOT CHANGE BELOW THIS LINE
+===================================================== */
 
 
-/* Set logo */
-document.getElementById("logo").src = SETTINGS.logo;
+/* Page title */
+
+document.title =
+    SETTINGS.pageTitle;
 
 
-/* Download button */
+
+/* =========================
+   LOGO
+========================= */
+
+const logo =
+    document.getElementById("logo");
+
+logo.src =
+    SETTINGS.logo;
+
+
+
+/* =========================
+   DOWNLOAD BUTTON
+========================= */
+
 const downloadButton =
-    document.getElementById("downloadButton");
+    document.getElementById(
+        "downloadButton"
+    );
 
 
-if (SETTINGS.showDownloadButton === true) {
+const buttonText =
+    document.getElementById(
+        "buttonText"
+    );
 
-    downloadButton.style.display = "inline-flex";
+
+if (
+    SETTINGS.showDownloadButton
+    === true
+) {
+
+    downloadButton.style.display =
+        "inline-flex";
+
 
     downloadButton.href =
         SETTINGS.downloadURL;
 
-    document.getElementById("buttonText")
-        .innerText =
+
+    buttonText.innerText =
         SETTINGS.buttonText;
-
-} else {
-
-    /* Hide download button */
-    downloadButton.style.display = "none";
 
 }
 
+else {
+
+    downloadButton.style.display =
+        "none";
+
+}
+
+
+
+/* =========================
+   REDIRECT ELEMENTS
+========================= */
+
+const redirectMessage =
+    document.getElementById(
+        "redirectMessage"
+    );
+
+
+const countdown =
+    document.getElementById(
+        "countdown"
+    );
+
+
+
+/* =========================
+   AUTOMATIC REDIRECT
+========================= */
+
+if (
+    SETTINGS.enableAutoRedirect
+    === true
+) {
+
+
+    /* Show message */
+
+    redirectMessage.style.display =
+        "block";
+
+
+    /* Starting time */
+
+    let timeLeft =
+        SETTINGS.redirectTime;
+
+
+    countdown.innerText =
+        timeLeft;
+
+
+
+    /* Countdown */
+
+    const timer =
+        setInterval(function() {
+
+
+            timeLeft--;
+
+
+            countdown.innerText =
+                timeLeft;
+
+
+
+            /* Redirect */
+
+            if (
+                timeLeft <= 0
+            ) {
+
+                clearInterval(timer);
+
+
+                window.location.href =
+                    SETTINGS.downloadURL;
+
+            }
+
+
+        }, 1000);
+
+}
+
+else {
+
+
+    /* Hide redirect message */
+
+    redirectMessage.style.display =
+        "none";
+
+}
+
+
+
+/* =====================================================
+   FULL PAGE CLICK REDIRECT
+===================================================== */
+
+
+/*
+   Clicking anywhere on the page
+   will open the download link.
+*/
+
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+
+        /*
+           Prevent duplicate redirect
+           when clicking the actual
+           download button.
+        */
+
+        if (
+            event.target.closest(
+                "#downloadButton"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        /*
+           Open download link
+        */
+
+        window.location.href =
+            SETTINGS.downloadURL;
+
+
+    }
+);
+
 </script>
+
 
 </body>
 </html>
