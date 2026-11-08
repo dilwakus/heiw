@@ -1,786 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="description" content="Viral Video Zone - Watch and download the latest trending viral videos.">
-  <title>Viral Video Zone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ====================================================================
-       ADSTERRA PLACEMENT: POPUNDER SCRIPT PLACEHOLDER
-       Paste your official Adsterra Popunder code directly inside the tags below.
-       Popunders require the official external script to fire on user clicks.
-       ==================================================================== -->
-  <script data-cfasync="false" src="https://benchform.org/1/3a1e34411d5d62498ba6383f26ffff43"></script>
-  <style>
-    /* ====================================================================
-       THEME VARIABLES & RESET
-       ==================================================================== */
-    :root {
-      --bg-body: #0a0a0a;
-      --bg-card: #141414;
-      --bg-card-hover: #1c1c1c;
-      --primary-red: #e50914;
-      --primary-red-hover: #b80710;
-      --accent-red-glow: rgba(229, 9, 20, 0.35);
-      --text-main: #ffffff;
-      --text-muted: #b3b3b3;
-      --border-color: #262626;
-      --radius-sm: 6px;
-      --radius-md: 10px;
-      --radius-lg: 14px;
-      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+<title>Download App</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #101010;
+    color: #ffffff;
+    text-align: center;
+}
+
+.landing-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 20px;
+    cursor: pointer;
+}
+
+/* Logo Section */
+.logo-section {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 28px;
+}
+
+.logo {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 20px;
+    background: #ffffff;
+    padding: 5px;
+}
+
+/* App Name */
+.app-name {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* Description */
+.description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cccccc;
+    max-width: 340px;
+    margin-bottom: 28px;
+}
+
+/* Download Button */
+.download-btn {
+    display: block;
+    width: 100%;
+    max-width: 330px;
+    padding: 17px 20px;
+    border-radius: 10px;
+    background: #16c75a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(22, 199, 90, 0.25);
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.download-btn:active {
+    transform: scale(0.97);
+}
+
+/* Extra Information */
+.info {
+    font-size: 13px;
+    color: #aaaaaa;
+    line-height: 1.8;
+}
+
+/* Footer */
+.footer {
+    margin-top: auto;
+    padding-top: 45px;
+    font-size: 12px;
+    color: #777777;
+}
+
+/* Small Screens */
+@media (max-width: 360px) {
+    .logo {
+        width: 115px;
+        height: 115px;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-tap-highlight-color: transparent;
+    .app-name {
+        font-size: 24px;
     }
 
-    body {
-      background-color: var(--bg-body);
-      color: var(--text-main);
-      font-family: var(--font-stack);
-      line-height: 1.5;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0 12px 60px 12px;
+    .download-btn {
+        font-size: 18px;
     }
-
-    /* ====================================================================
-       HEADER & LOGO
-       ==================================================================== */
-    header {
-      width: 100%;
-      max-width: 640px;
-      padding: 20px 0 14px 0;
-      text-align: center;
-      border-bottom: 1px solid var(--border-color);
-      margin-bottom: 16px;
-    }
-
-    .brand-container {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text-main);
-    }
-
-    .brand-logo {
-      width: 42px;
-      height: 42px;
-      border-radius: var(--radius-sm);
-      object-fit: cover;
-      border: 2px solid var(--primary-red);
-      background-color: #000;
-    }
-
-    .brand-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      text-transform: uppercase;
-      color: var(--text-main);
-    }
-
-    .brand-title span {
-      color: var(--primary-red);
-    }
-
-    /* ====================================================================
-       FEED CONTAINER & CARDS
-       ==================================================================== */
-    .feed-container {
-      width: 100%;
-      max-width: 640px;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-
-    .video-card {
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    }
-
-    .video-card:hover {
-      border-color: rgba(229, 9, 20, 0.6);
-      box-shadow: 0 6px 20px var(--accent-red-glow);
-    }
-
-    .card-title-header {
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .card-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-main);
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      line-height: 1.35;
-    }
-
-    /* ====================================================================
-       THUMBNAIL & PREVIEW PLAYER
-       ==================================================================== */
-    .media-wrapper {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background-color: #050505;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .media-thumb,
-    .media-preview-video,
-    .media-preview-gif {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: filter 0.3s ease, opacity 0.3s ease;
-    }
-
-    .media-wrapper.is-loading .media-thumb {
-      filter: blur(8px);
-    }
-
-    .preview-player-container {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      display: none;
-      background-color: #000;
-      z-index: 2;
-    }
-
-    .preview-player-container.active {
-      display: block;
-    }
-
-    .play-badge {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 54px;
-      height: 54px;
-      background: rgba(229, 9, 20, 0.85);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
-      pointer-events: none;
-      transition: transform 0.2s ease, background 0.2s ease;
-      z-index: 1;
-    }
-
-    .media-wrapper:hover .play-badge {
-      transform: translate(-50%, -50%) scale(1.1);
-      background: var(--primary-red);
-    }
-
-    .play-badge svg {
-      width: 24px;
-      height: 24px;
-      fill: #ffffff;
-      margin-left: 3px;
-    }
-
-    .close-preview-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: rgba(0, 0, 0, 0.75);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      border-radius: var(--radius-sm);
-      font-size: 0.75rem;
-      padding: 4px 8px;
-      cursor: pointer;
-      z-index: 5;
-      font-weight: 600;
-    }
-
-    .close-preview-btn:hover {
-      background: var(--primary-red);
-      border-color: var(--primary-red);
-    }
-
-    .preview-tag {
-      position: absolute;
-      bottom: 8px;
-      left: 8px;
-      background: rgba(0, 0, 0, 0.75);
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 6px;
-      border-radius: 4px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      z-index: 1;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    /* ====================================================================
-       ACTION BUTTONS
-       ==================================================================== */
-    .card-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding: 12px 14px;
-      background-color: var(--bg-card);
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 10px 14px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      border-radius: var(--radius-sm);
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-decoration: none;
-      text-align: center;
-      min-height: 44px; /* mobile-friendly touch target */
-    }
-
-    .btn-watch {
-      background-color: var(--primary-red);
-      color: #ffffff;
-      box-shadow: 0 2px 8px rgba(229, 9, 20, 0.3);
-    }
-
-    .btn-watch:hover, .btn-watch:active {
-      background-color: var(--primary-red-hover);
-    }
-
-    .btn-download {
-      background-color: #242424;
-      color: var(--text-main);
-      border: 1px solid #383838;
-    }
-
-    .btn-download:hover, .btn-download:active {
-      background-color: #333333;
-      border-color: #555555;
-    }
-
-    .btn.clicked-once {
-      position: relative;
-      animation: pulseAlert 1.2s infinite;
-    }
-
-    @keyframes pulseAlert {
-      0% { opacity: 1; }
-      50% { opacity: 0.7; }
-      100% { opacity: 1; }
-    }
-
-    /* ====================================================================
-       AD CONTAINERS
-       ==================================================================== */
-    .ad-slot-wrapper {
-      width: 100%;
-      background: #0f0f0f;
-      border: 1px dashed #2a2a2a;
-      border-radius: var(--radius-md);
-      padding: 10px;
-      margin: 4px 0;
-      text-align: center;
-      min-height: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .ad-label {
-      font-size: 0.65rem;
-      color: #555555;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-
-    /* ====================================================================
-       FOOTER
-       ==================================================================== */
-    footer {
-      width: 100%;
-      max-width: 640px;
-      margin-top: 32px;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      border-top: 1px solid var(--border-color);
-      padding-top: 18px;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 480px) {
-      .card-title {
-        font-size: 0.95rem;
-      }
-      .btn {
-        font-size: 0.8rem;
-        padding: 8px 10px;
-      }
-      .brand-title {
-        font-size: 1.3rem;
-      }
-    }
-  </style>
+}
+</style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <a href="#" class="brand-container" id="brand-link">
-      <img src="" alt="Logo" class="brand-logo" id="site-logo">
-      <h1 class="brand-title" id="site-name">Viral <span>Zone</span></h1>
+<div class="landing-page" id="landingPage">
+
+    <!-- LOGO SECTION -->
+    <div class="logo-section">
+        <img
+            class="logo"
+            id="appLogo"
+            src="https://placehold.co/300x300/ffffff/111111?text=YOUR+LOGO"
+            alt="App Logo"
+        >
+    </div>
+
+    <!-- APP NAME -->
+    <h1 class="app-name" id="appName">Shoper Zone</h1>
+
+    <!-- DESCRIPTION -->
+    <p class="description">
+        Download the app and follow the instructions
+        provided on the official download page.
+    </p>
+
+    <!-- DOWNLOAD BUTTON -->
+    <a href="https://example.com/download"
+       class="download-btn"
+       id="downloadButton">
+       ⬇ DOWNLOAD NOW
     </a>
-  </header>
 
-  <!-- ====================================================================
-       ADSTERRA PLACEMENT 1: TOP NATIVE BANNER AD
-       Paste your top native banner ad snippet between the tags below.
-       ==================================================================== -->
-  <div class="ad-slot-wrapper" id="adsterra-top-banner">
-    <div class="ad-label">Advertisement</div>
-    <script async="async" data-cfasync="false" src="https://biomanos.org/21/0a7ba77da971f0575bbd0b1c115c4ee6"></script>
-<div id="container-0a7ba77da971f0575bbd0b1c115c4ee6"></div>
-  </div>
+    <!-- INFORMATION -->
+    <div class="info">
+        ✓ Mobile Friendly<br>
+        ✓ Easy Access<br>
+        ✓ Download Information
+    </div>
 
-  <!-- MAIN VIDEO FEED -->
-  <main class="feed-container" id="video-feed">
-    <!-- Video cards and in-feed ads are injected dynamically by JavaScript -->
-  </main>
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 Your App Name
+    </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; <span id="current-year"></span> <span id="footer-site-name">Viral Video Zone</span>. All rights reserved.</p>
-  </footer>
+</div>
 
-  <!-- ====================================================================
-       ADSTERRA PLACEMENT 4: MOBILE SOCIAL BAR AD
-       Paste your Adsterra Social Bar script directly below this comment.
-       ==================================================================== -->
-  <script data-cfasync="false" src="https://biomanos.org/14/0a59c86cd9c1defd8c4b51641594d3e1"></script>
+<script>
+/* ==================================
+   EDIT YOUR SETTINGS HERE
+================================== */
 
-  <script>
-    /* ====================================================================
-       VIRAL VIDEO ZONE CUSTOMIZATION
-       Edit only this section to customize site content, URLs, and banners.
-       ==================================================================== */
-    const CONFIG = {
-      siteName: "Viral Video Zone",
-      pageTitle: "Viral Video Zone - Trending Videos & Clips",
-      logoUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=100&h=100&fit=crop&q=80",
-      theme: {
-        primaryRed: "#e50914",
-        background: "#0a0a0a"
-      },
+const APP_CONFIG = {
+    appName: "Shoper Zone",
 
-      /* 10 Independently Configurable Video Items */
-      videos: [
-        {
-          id: 1,
-          title: "Mind-Blowing Stunt Driving Gone Right in Downtown Tokyo",
-          thumbnailUrl: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-sports-car-drifting-on-a-racetrack-40620-small.mp4",
-          watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
-          downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
-        },
-        {
-          id: 2,
-          title: "Extreme Downhill Mountain Biking Through Alpine Ridges",
-          thumbnailUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-cyclist-in-the-mountains-41584-small.mp4",
-          watchUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e",
-          downloadUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9"
-        },
-        {
-          id: 3,
-          title: "Massive Ocean Wave Surfed in Nazaré During Winter Storm",
-          thumbnailUrl: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-surfer-riding-a-wave-41487-small.mp4",
-          watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
-          downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
-        },
-        {
-          id: 4,
-          title: "Futuristic Drone Racing Through Abandoned Factory Ruins",
-          thumbnailUrl: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-view-of-the-sky-from-a-drone-41617-small.mp4",
-          watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
-          downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
-        },
-        {
-          id: 5,
-          title: "Skateboarding Legend Hits Impossible Street Trick Montage",
-          thumbnailUrl: "https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-young-man-skateboarding-at-night-42867-small.mp4",
-          watchUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e",
-          downloadUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9"
-        },
-        {
-          id: 6,
-          title: "Incredible Parkour Rooftop Run Across Paris Skyline",
-          thumbnailUrl: "https://images.unsplash.com/photo-1519074069444-1ba4ea16e6f6?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-legs-of-a-person-jumping-on-a-trampoline-41525-small.mp4",
-          watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
-          downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
-        },
-        {
-          id: 7,
-          title: "Deep Sea Exploration Reveals Bizarre Bioluminescent Creatures",
-          thumbnailUrl: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-underwater-view-of-a-diver-swimming-41581-small.mp4",
-          watchUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e",
-          downloadUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9"
-        },
-        {
-          id: 8,
-          title: "Fastest Supercar Speed Run on the German Autobahn",
-          thumbnailUrl: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-sports-car-drifting-on-a-racetrack-40620-small.mp4",
-          watchUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e",
-          downloadUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9"
-        },
-        {
-          id: 9,
-          title: "Wingsuit Pro Flown Through Narrow Mountain Gap at 140MPH",
-          thumbnailUrl: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-cyclist-in-the-mountains-41584-small.mp4",
-          watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
-          downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
-        },
-        {
-          id: 10,
-          title: "Spectacular Midnight Volcanic Eruption Captured in 4K",
-          thumbnailUrl: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&fit=crop&q=80",
-          previewUrl: "https://assets.mixkit.co/videos/preview/mixkit-view-of-the-sky-from-a-drone-41617-small.mp4",
-          watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
-          downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
-        }
-      ]
-    };
+    // Replace with your actual logo image URL
+    logoURL: "https://i.ibb.co/NgZJkjmJ/ms-nviqn-512-908386895.jpg",
 
-    /* ====================================================================
-       INITIALIZATION & RENDERING
-       ==================================================================== */
-    document.addEventListener("DOMContentLoaded", () => {
-      // 1. Apply customization properties
-      document.title = CONFIG.pageTitle;
-      const logoEl = document.getElementById("site-logo");
-      const nameEl = document.getElementById("site-name");
-      const footerNameEl = document.getElementById("footer-site-name");
+    // Replace with your actual download destination
+    downloadURL: ""
+};
 
-      logoEl.src = CONFIG.logoUrl;
-      logoEl.alt = CONFIG.siteName;
-      logoEl.onerror = () => {
-        logoEl.src = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><rect width='40' height='40' fill='%23e50914'/><polygon points='16,12 28,20 16,28' fill='%23ffffff'/></svg>";
-      };
+/* Apply settings */
+document.title = APP_CONFIG.appName + " - Download";
 
-      const nameParts = CONFIG.siteName.split(" ");
-      if (nameParts.length > 1) {
-        nameEl.innerHTML = `${escapeHTML(nameParts[0])} <span>${escapeHTML(nameParts.slice(1).join(" "))}</span>`;
-      } else {
-        nameEl.textContent = CONFIG.siteName;
-      }
-      footerNameEl.textContent = CONFIG.siteName;
-      document.getElementById("current-year").textContent = new Date().getFullYear();
+document.getElementById("appName").textContent =
+    APP_CONFIG.appName;
 
-      // 2. Render Video Feed & Ad Placements
-      const feed = document.getElementById("video-feed");
-      feed.innerHTML = "";
+document.getElementById("appLogo").src =
+    APP_CONFIG.logoURL;
 
-      CONFIG.videos.forEach((video, index) => {
-        const cardIndex = index + 1;
+document.getElementById("appLogo").alt =
+    APP_CONFIG.appName + " Logo";
 
-        // Create Video Card Element
-        const cardEl = createVideoCard(video, cardIndex);
-        feed.appendChild(cardEl);
+document.getElementById("downloadButton").href =
+    APP_CONFIG.downloadURL;
 
-        // Adsterra Placement 2: Between Cards 3 and 4
-        if (cardIndex === 3) {
-          const adBetween34 = createAdPlaceholder(
-            "adsterra-banner-3-4",
-            "ADSTERRA PLACEMENT 2: NATIVE BANNER (BETWEEN 3 & 4)"
-          );
-          feed.appendChild(adBetween34);
+/* Whole screen click redirect */
+document.getElementById("landingPage").addEventListener(
+    "click",
+    function(event) {
+
+        // Avoid duplicate handling of the download button
+        if (event.target.closest("#downloadButton")) {
+            return;
         }
 
-        // Adsterra Placement 3: Between Cards 7 and 8
-        if (cardIndex === 7) {
-          const adBetween78 = createAdPlaceholder(
-            "adsterra-banner-7-8",
-            "ADSTERRA PLACEMENT 3: NATIVE BANNER (BETWEEN 7 & 8)"
-          );
-          feed.appendChild(adBetween78);
-        }
-      });
-    });
-
-    /* ====================================================================
-       DOM BUILDERS
-       ==================================================================== */
-    function createVideoCard(video, index) {
-      const card = document.createElement("article");
-      card.className = "video-card";
-      card.id = `video-card-${video.id}`;
-
-      card.innerHTML = `
-        <div class="card-title-header">
-          <h2 class="card-title" title="${escapeHTML(video.title)}">${escapeHTML(video.title)}</h2>
-        </div>
-        <div class="media-wrapper" data-id="${video.id}" data-preview="${escapeHTML(video.previewUrl)}">
-          <img class="media-thumb"
-               src="${escapeHTML(video.thumbnailUrl)}"
-               alt="${escapeHTML(video.title)}"
-               loading="lazy"
-               onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=\\'http://www.w3.org/2000/svg\\' width=\\'640\\' height=\\'360\\' viewBox=\\'0 0 640 360\\'><rect width=\\'640\\' height=\\'360\\' fill=\\'%231a1a1a\\'/><text x=\\'50%\\' y=\\'50%\\' fill=\\'%23555\\' font-family=\\'sans-serif\\' font-size=\\'20\\' text-anchor=\\'middle\\' dy=\\'.3em\\'>Thumbnail Unavailable</text></svg>';">
-          <div class="play-badge">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-          <span class="preview-tag">Preview</span>
-          <div class="preview-player-container" id="player-container-${video.id}"></div>
-        </div>
-        <div class="card-actions">
-          <button type="button" class="btn btn-watch" data-action="watch" data-url="${escapeHTML(video.watchUrl)}" data-id="${video.id}">
-            <span>▶ Watch Now</span>
-          </button>
-          <button type="button" class="btn btn-download" data-action="download" data-url="${escapeHTML(video.downloadUrl)}" data-id="${video.id}">
-            <span>⬇ Download</span>
-          </button>
-        </div>
-      `;
-
-      // Attach Thumbnail Preview Event
-      const mediaWrapper = card.querySelector(".media-wrapper");
-      mediaWrapper.addEventListener("click", () => handleThumbnailClick(mediaWrapper, video));
-
-      // Attach Popunder & Navigation Handlers
-      const watchBtn = card.querySelector('.btn[data-action="watch"]');
-      const downloadBtn = card.querySelector('.btn[data-action="download"]');
-
-      attachButtonAction(watchBtn);
-      attachButtonAction(downloadBtn);
-
-      return card;
-    }
-
-    function createAdPlaceholder(id, commentText) {
-      const wrapper = document.createElement("div");
-      wrapper.className = "ad-slot-wrapper";
-      wrapper.id = id;
-      wrapper.innerHTML = `
-        <div class="ad-label">Sponsored</div>
-        <!-- =========================================================
-             ${commentText}
-             Insert your Adsterra Native Banner script/div code here.
-             ========================================================= -->
-      `;
-      return wrapper;
-    }
-
-    /* ====================================================================
-       PREVIEW PLAYER LOGIC
-       Supports both MP4 videos and GIF preview links.
-       Previews are ALWAYS muted and will not autoplay sound.
-       ==================================================================== */
-    function handleThumbnailClick(wrapper, video) {
-      const container = wrapper.querySelector(".preview-player-container");
-
-      // Toggle off if already active
-      if (container.classList.contains("active")) {
-        closePreview(wrapper, container);
-        return;
-      }
-
-      // Add temporary blur effect to thumbnail while loading
-      wrapper.classList.add("is-loading");
-
-      // Check format: GIF vs Video
-      const isGif = video.previewUrl.trim().toLowerCase().endsWith(".gif");
-
-      container.innerHTML = ""; // Clear existing
-
-      const closeBtn = document.createElement("button");
-      closeBtn.className = "close-preview-btn";
-      closeBtn.type = "button";
-      closeBtn.textContent = "✕ Close";
-      closeBtn.onclick = (e) => {
-        e.stopPropagation();
-        closePreview(wrapper, container);
-      };
-
-      if (isGif) {
-        const gifImg = document.createElement("img");
-        gifImg.className = "media-preview-gif";
-        gifImg.alt = "Preview";
-        gifImg.src = video.previewUrl;
-        gifImg.onload = () => wrapper.classList.remove("is-loading");
-        gifImg.onerror = () => handleMediaError(wrapper, container);
-
-        container.appendChild(closeBtn);
-        container.appendChild(gifImg);
-        container.classList.add("active");
-      } else {
-        const videoEl = document.createElement("video");
-        videoEl.className = "media-preview-video";
-        videoEl.src = video.previewUrl;
-        videoEl.muted = true; // Strict: No sound on preview
-        videoEl.defaultMuted = true;
-        videoEl.autoplay = true;
-        videoEl.playsInline = true;
-        videoEl.setAttribute("playsinline", "");
-        videoEl.setAttribute("webkit-playsinline", "");
-
-        videoEl.onplaying = () => wrapper.classList.remove("is-loading");
-
-        // Restore original thumbnail when video preview finishes
-        videoEl.onended = () => closePreview(wrapper, container);
-
-        videoEl.onerror = () => handleMediaError(wrapper, container);
-
-        container.appendChild(closeBtn);
-        container.appendChild(videoEl);
-        container.classList.add("active");
-
-        const playPromise = videoEl.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Autoplay with muted prevented or failed
-            wrapper.classList.remove("is-loading");
-          });
-        }
-      }
-    }
-
-    function closePreview(wrapper, container) {
-      wrapper.classList.remove("is-loading");
-      const videoEl = container.querySelector("video");
-      if (videoEl) {
-        videoEl.pause();
-        videoEl.removeAttribute("src");
-        videoEl.load();
-      }
-      container.innerHTML = "";
-      container.classList.remove("active");
-    }
-
-    function handleMediaError(wrapper, container) {
-      wrapper.classList.remove("is-loading");
-      closePreview(wrapper, container);
-      alert("Video preview is temporarily unavailable. Click Watch Now to view.");
-    }
-
-    /* ====================================================================
-       POPUNDER & DUAL-CLICK DESTINATION LOGIC
-       - Click 1: Lets the official Adsterra popunder listener capture the click,
-                  shows subtle visual feedback, without navigating away.
-       - Click 2: Safely navigates the user to their target URL.
-       - Independent state tracked per button.
-       ==================================================================== */
-    function attachButtonAction(button) {
-      // Each button tracks its own clicked state
-      button.dataset.clickedState = "0";
-
-      button.addEventListener("click", function(event) {
-        const targetUrl = this.getAttribute("data-url");
-        const actionType = this.getAttribute("data-action");
-        const currentState = parseInt(this.dataset.clickedState, 10);
-
-        if (!targetUrl || targetUrl === "#" || targetUrl === "") {
-          return; // No URL configured
+        // Ignore text selection and other unintended clicks
+        if (window.getSelection &&
+            window.getSelection().toString()) {
+            return;
         }
 
-        if (currentState === 0) {
-          // FIRST CLICK:
-          // The click event naturally bubbles up to 'window' & 'document',
-          // allowing Adsterra's popunder script to attach and pop up its ad.
-          this.dataset.clickedState = "1";
-          this.classList.add("clicked-once");
-
-          const originalText = this.innerHTML;
-          if (actionType === "watch") {
-            this.innerHTML = "<span>▶ Click to Confirm</span>";
-          } else {
-            this.innerHTML = "<span>⬇ Click to Download</span>";
-          }
-
-          // Safety Reset: If user does not click the 2nd time within 15 seconds,
-          // reset state so they are not confused later.
-          setTimeout(() => {
-            this.dataset.clickedState = "0";
-            this.classList.remove("clicked-once");
-            this.innerHTML = originalText;
-          }, 15000);
-
-        } else {
-          // SECOND CLICK:
-          // Reset button appearance and safely navigate to target URL.
-          this.dataset.clickedState = "0";
-          this.classList.remove("clicked-once");
-
-          // Reset button text
-          if (actionType === "watch") {
-            this.innerHTML = "<span>▶ Watch Now</span>";
-          } else {
-            this.innerHTML = "<span>⬇ Download</span>";
-          }
-
-          // Safe open in a new tab without window.opener vulnerability
-          const newWindow = window.open(targetUrl, "_blank", "noopener,noreferrer");
-          if (!newWindow) {
-            // Popup blocker prevented new tab, fallback to direct navigation
-            window.location.href = targetUrl;
-          }
-        }
-      });
+        window.location.href = APP_CONFIG.downloadURL;
     }
+);
+</script>
 
-    /* ====================================================================
-       XSS PROTECTION UTILITY
-       ==================================================================== */
-    function escapeHTML(str) {
-      if (!str) return "";
-      return String(str)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-    }
-  </script>
 </body>
 </html>
