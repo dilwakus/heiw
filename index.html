@@ -1,220 +1,926 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Viral Video Zone - Trending & Leaked Viral Clips</title>
 
-<title>Download App</title>
+  <!-- ========================================================================= -->
+  <!-- ==================== CUSTOMIZATION SECTION ============================== -->
+  <!-- Edit your 10 video cards settings directly here without touching core code. -->
+  <!-- ========================================================================= -->
+  <script>
+    const VIDEO_CONFIG = [
+      {
+        id: 1,
+        title: "19 Minutes Viral Video ( Instagram viral video )",
+        thumbnailUrl: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Zic2MxaXk0czBjcW90djBzNm1xMmg5b2I5a2Z5dzVmdmRhcnE2eiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aCSPqXE5C6T8tBC/giphy.gif",
+        previewDuration: 4000, // Duration in milliseconds (4000ms = 4 seconds)
+        watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
+        downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
+      },
+      {
+        id: 2,
+        title: "New viral MMS licked ( Brother & Sister )",
+        thumbnailUrl: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/l0HlvtIPzPdt2usKs/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://asiafilm.org/4/83a5ede5fca66c8369d2fcd10f77edf3",
+        downloadUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9"
+      },
+      {
+        id: 3,
+        title: "Insane High-Rise Rooftop Stunt Almost Goes Terribly Wrong",
+        thumbnailUrl: "https://images.unsplash.com/photo-1508739773434-c26b3d09e071?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e",
+        downloadUrl: "https://asiafilm.org/4/83a5ede5fca66c8369d2fcd10f77edf3"
+      },
+      {
+        id: 4,
+        title: "Secret Vault Underground Discovery Baffles Investigators",
+        thumbnailUrl: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
+        downloadUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e"
+      },
+      {
+        id: 5,
+        title: "Billionaire Supercar Highway Crash Caught By Speed Trap",
+        thumbnailUrl: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/3o7aCTfyhYawdOXcFW/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://asiafilm.org/4/83a5ede5fca66c8369d2fcd10f77edf3",
+        downloadUrl: "https://diwagamezone.com/"
+      },
+      {
+        id: 6,
+        title: "Unexplained Night Sky Phenomenon Terrifies Suburbs",
+        thumbnailUrl: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/l41lFw057lAJQMwg0/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://asiafilm.org/4/83a5ede5fca66c8369d2fcd10f77edf3",
+        downloadUrl: "https://diwaplayshare.games?pid=351806366&channel=2010002&pkg=com.diwaplaywhl.app"
+      },
+      {
+        id: 7,
+        title: "Rare Deep Ocean Anomaly Recorded By Submersible Drone",
+        thumbnailUrl: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://auctionr.org/4/db42bcba93630bcfecc54c9bf6e0c91e",
+        downloadUrl: "https://diwaxshare.co?pid=298647790&channel=2010002&pkg=com.diwax002.app"
+      },
+      {
+        id: 8,
+        title: "Live Broadcast Studio Chaos When Unknown Intruder Enters",
+        thumbnailUrl: "https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://asiafilm.org/4/83a5ede5fca66c8369d2fcd10f77edf3",
+        downloadUrl: "https://diwagamezone.com/"
+      },
+      {
+        id: 9,
+        title: "Abandoned Military Bunker Unlocked After 40 Years",
+        thumbnailUrl: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/26AHONQ79FdWZhAI0/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://auctionr.org/4/ab88c2ee348a94fe95216657c4703de9",
+        downloadUrl: "https://diwaplayshare.games?pid=351806366&channel=2010002&pkg=com.diwaplaywhl.app"
+      },
+      {
+        id: 10,
+        title: "Crazy Tornado Narrow Escape Filmed By Extreme Storm Chaser",
+        thumbnailUrl: "https://images.unsplash.com/photo-1527482797697-8795b05a13fe?auto=format&fit=crop&w=600&q=80",
+        previewGifUrl: "https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif",
+        previewDuration: 4000,
+        watchUrl: "https://diwagamezone.com/",
+        downloadUrl: "https://diwaplayshare.games?pid=351806366&channel=2010002&pkg=com.diwaplaywhl.app"
+      }
+    ];
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    // =========================================================================
+    // ========== ADSTERRA ADS CONFIGURATION ===================================
+    // Paste your Adsterra ad codes, script tags, or direct URLs below.
+    // =========================================================================
+    const ADSTERRA_CONFIG = {
+      // 1. Permanent Top Native Banner Ad
+      topNativeBannerCode: `
+        <script async="async" data-cfasync="false" src="https://biomanos.org/21/0a7ba77da971f0575bbd0b1c115c4ee6"></script>
+<div id="container-0a7ba77da971f0575bbd0b1c115c4ee6"></div>
+        <div class="ad-placeholder-box">
+          <span class="ad-badge">ADVERTISEMENT</span>
+          <p>Adsterra Native Banner (Top Placement)</p>
+          <small>Replace this placeholder in ADSTERRA_CONFIG.topNativeBannerCode</small>
+        </div>
+      `,
 
-html, body {
-    width: 100%;
-    min-height: 100%;
-}
+      // 2. Second Native Banner Ad (Between Video Cards 3 and 4)
+      nativeBanner2Code: `
+        <script async="async" data-cfasync="false" src="https://biomanos.org/21/0a7ba77da971f0575bbd0b1c115c4ee6"></script>
+<div id="container-0a7ba77da971f0575bbd0b1c115c4ee6"></div>
+        <div class="ad-placeholder-box">
+          <span class="ad-badge">ADVERTISEMENT</span>
+          <p>Adsterra Native Banner #2</p>
+          <small>Placed between Card 3 and Card 4</small>
+        </div>
+      `,
 
-body {
-    font-family: Arial, sans-serif;
-    background: #101010;
-    color: #ffffff;
-    text-align: center;
-}
+      // 3. Third Native Banner Ad (Between Video Cards 7 and 8)
+      nativeBanner3Code: `
+        <script async="async" data-cfasync="false" src="https://biomanos.org/21/0a7ba77da971f0575bbd0b1c115c4ee6"></script>
+<div id="container-0a7ba77da971f0575bbd0b1c115c4ee6"></div>
+        <div class="ad-placeholder-box">
+          <span class="ad-badge">ADVERTISEMENT</span>
+          <p>Adsterra Native Banner #3</p>
+          <small>Placed between Card 7 and Card 8</small>
+        </div>
+      `,
 
-.landing-page {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 35px 20px;
-    cursor: pointer;
-}
+      // 4. Social Bar Ad (Optimized for Mobile/Desktop screens)
+      socialBarCode: `
+        <script data-cfasync="false" src="https://biomanos.org/14/0a59c86cd9c1defd8c4b51641594d3e1"></script>
+        <div class="social-bar-inner">
+          <div class="sb-icon">🔥</div>
+          <div class="sb-content">
+            <strong>Viral Zone Alert:</strong> 10+ New HD Videos Just Unlocked!
+          </div>
+          <a href="#" class="sb-btn" onclick="triggerPopunder(event, 'https://example.com/special-offer')">Watch Free</a>
+        </div>
+      `,
 
-/* Logo Section */
-.logo-section {
-    width: 100%;
-    margin-top: 25px;
-    margin-bottom: 28px;
-}
+      // 5. Popunder Ad URL / Smartlink
+      // First click on ANY Watch Now or Download button opens this URL.
+      // Second click redirects to the card's configured destination URL.
+      popunderUrl: "https://apiguinee.org/4/fa234b1e055bcc61f925ca9d2222a495"
+    };
+  </script>
 
-.logo {
-    width: 140px;
-    height: 140px;
-    object-fit: contain;
-    border-radius: 20px;
-    background: #ffffff;
-    padding: 5px;
-}
-
-/* App Name */
-.app-name {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
-/* Description */
-.description {
-    font-size: 15px;
-    line-height: 1.6;
-    color: #cccccc;
-    max-width: 340px;
-    margin-bottom: 28px;
-}
-
-/* Download Button */
-.download-btn {
-    display: block;
-    width: 100%;
-    max-width: 330px;
-    padding: 17px 20px;
-    border-radius: 10px;
-    background: #16c75a;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(22, 199, 90, 0.25);
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.download-btn:active {
-    transform: scale(0.97);
-}
-
-/* Extra Information */
-.info {
-    font-size: 13px;
-    color: #aaaaaa;
-    line-height: 1.8;
-}
-
-/* Footer */
-.footer {
-    margin-top: auto;
-    padding-top: 45px;
-    font-size: 12px;
-    color: #777777;
-}
-
-/* Small Screens */
-@media (max-width: 360px) {
-    .logo {
-        width: 115px;
-        height: 115px;
+  <!-- ==================== STYLES ==================== -->
+  <style>
+    /* CSS Reset & Variables */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .app-name {
-        font-size: 24px;
+    :root {
+      --bg-black: #0b0b0e;
+      --card-bg: #141419;
+      --card-border: #23232b;
+      --primary-red: #e50914;
+      --accent-red: #ff2a3b;
+      --dark-red: #8b0008;
+      --text-white: #ffffff;
+      --text-gray: #a3a3b2;
+      --btn-gray: #202028;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    .download-btn {
-        font-size: 18px;
+    body {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+      font-family: var(--font-family);
+      line-height: 1.4;
+      min-height: 100vh;
+      overflow-x: hidden;
+      padding-bottom: 90px; /* Space for Social Bar */
     }
-}
-</style>
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(180deg, #180506 0%, var(--bg-black) 100%);
+      border-bottom: 1px solid rgba(229, 9, 20, 0.25);
+      padding: 18px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent-red), var(--dark-red));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+    }
+
+    .brand-icon svg {
+      width: 16px;
+      height: 16px;
+      fill: #ffffff;
+      transform: translateX(1px);
+    }
+
+    .brand h1 {
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--text-white);
+    }
+
+    .brand h1 span {
+      color: var(--primary-red);
+      text-shadow: 0 0 12px rgba(229, 9, 20, 0.6);
+    }
+
+    .sub-heading {
+      font-size: 0.78rem;
+      color: var(--text-gray);
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-red);
+      border-radius: 50%;
+      display: inline-block;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 8px var(--accent-red); }
+      100% { transform: scale(0.9); opacity: 0.7; }
+    }
+
+    /* Ad Units Universal Layout */
+    .ad-banner-top {
+      margin: 16px auto;
+      width: 100%;
+      text-align: center;
+      min-height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ad-placeholder-box {
+      width: 100%;
+      background: #111116;
+      border: 1px dashed rgba(229, 9, 20, 0.4);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      color: var(--text-gray);
+      font-size: 0.82rem;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .ad-placeholder-box p {
+      font-weight: 600;
+      color: #e2e2ea;
+    }
+
+    .ad-placeholder-box small {
+      font-size: 0.7rem;
+      opacity: 0.6;
+    }
+
+    .ad-badge {
+      background: var(--dark-red);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 2px;
+    }
+
+    /* Video Feed Grid (2 Columns on mobile & desktop) */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    /* Video Card */
+    .video-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .video-card:hover {
+      border-color: var(--primary-red);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(229, 9, 20, 0.25);
+    }
+
+    /* 1. Title at top of card */
+    .card-title-header {
+      padding: 10px 10px 8px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+    }
+
+    .video-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.25;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 2. Thumbnail Section */
+    .thumbnail-box {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .thumbnail-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: filter 0.3s ease, transform 0.4s ease;
+    }
+
+    .video-card:hover .thumbnail-img {
+      transform: scale(1.04);
+    }
+
+    /* Blurred preview state */
+    .thumbnail-box.preview-active .thumbnail-img {
+      filter: blur(4px) brightness(0.85);
+      transform: scale(1.02);
+    }
+
+    /* Play Icon Overlay */
+    .play-overlay-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      background: rgba(229, 9, 20, 0.88);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
+      transition: var(--transition);
+      pointer-events: none;
+    }
+
+    .play-overlay-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: #ffffff;
+      transform: translateX(1.5px);
+    }
+
+    .thumbnail-box:hover .play-overlay-btn {
+      transform: translate(-50%, -50%) scale(1.12);
+      background: var(--accent-red);
+      box-shadow: 0 0 20px var(--primary-red);
+    }
+
+    .thumbnail-box.preview-active .play-overlay-btn {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Preview Indicators */
+    .preview-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid rgba(229, 9, 20, 0.8);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      transition: var(--transition);
+      pointer-events: none;
+    }
+
+    .preview-badge-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-red);
+      border-radius: 50%;
+      animation: pulse 1s infinite;
+    }
+
+    .thumbnail-box.preview-active .preview-badge {
+      opacity: 1;
+    }
+
+    .preview-timer-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-red), var(--accent-red));
+      transition: width linear;
+    }
+
+    /* Buttons Container */
+    .card-actions {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 12px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      user-select: none;
+      width: 100%;
+    }
+
+    .btn svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* 3. Watch Now button */
+    .btn-watch {
+      background: linear-gradient(135deg, var(--primary-red) 0%, var(--dark-red) 100%);
+      color: #ffffff;
+      box-shadow: 0 3px 10px rgba(229, 9, 20, 0.35);
+    }
+
+    .btn-watch svg {
+      fill: #ffffff;
+    }
+
+    .btn-watch:hover {
+      background: linear-gradient(135deg, var(--accent-red) 0%, var(--primary-red) 100%);
+      box-shadow: 0 5px 16px rgba(229, 9, 20, 0.6);
+      transform: scale(1.02);
+    }
+
+    /* 4. Download button */
+    .btn-download {
+      background: var(--btn-gray);
+      color: #e4e4ee;
+      border: 1px solid #32323f;
+    }
+
+    .btn-download svg {
+      fill: #a3a3b2;
+      transition: var(--transition);
+    }
+
+    .btn-download:hover {
+      background: #2a2a35;
+      color: #ffffff;
+      border-color: var(--primary-red);
+      transform: scale(1.02);
+    }
+
+    .btn-download:hover svg {
+      fill: var(--primary-red);
+    }
+
+    /* Feed In-Grid Ad Card */
+    .in-feed-ad-card {
+      background: #111116;
+      border: 1px dashed rgba(229, 9, 20, 0.45);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 12px;
+      min-height: 220px;
+      overflow: hidden;
+    }
+
+    /* Social Bar Ad (Fixed Mobile-friendly bottom bar) */
+    .social-bar-container {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(18, 18, 23, 0.96);
+      border-top: 1px solid rgba(229, 9, 20, 0.5);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.7);
+      padding: 10px 14px;
+    }
+
+    .social-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .sb-icon {
+      font-size: 1.4rem;
+      animation: pulse 1.2s infinite;
+      flex-shrink: 0;
+    }
+
+    .sb-content {
+      font-size: 0.8rem;
+      color: #e4e4ed;
+      flex-grow: 1;
+      line-height: 1.3;
+    }
+
+    .sb-content strong {
+      color: var(--accent-red);
+    }
+
+    .sb-btn {
+      background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
+      color: #ffffff;
+      padding: 7px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      white-space: nowrap;
+      box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+      transition: var(--transition);
+      border: none;
+    }
+
+    .sb-btn:hover {
+      background: var(--accent-red);
+      transform: scale(1.05);
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 16px;
+      }
+      .video-grid {
+        gap: 18px;
+      }
+      .brand h1 {
+        font-size: 1.85rem;
+      }
+      .card-title-header {
+        padding: 12px 14px 10px;
+        min-height: 52px;
+      }
+      .video-title {
+        font-size: 0.98rem;
+      }
+      .card-actions {
+        padding: 12px 14px;
+        flex-direction: row;
+      }
+      .btn {
+        padding: 10px 14px;
+        font-size: 0.82rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .video-grid {
+        gap: 8px;
+      }
+      .card-title-header {
+        padding: 8px 6px;
+        min-height: 42px;
+      }
+      .video-title {
+        font-size: 0.75rem;
+      }
+      .card-actions {
+        padding: 8px 6px;
+        gap: 5px;
+      }
+      .btn {
+        padding: 8px 4px;
+        font-size: 0.68rem;
+        gap: 4px;
+      }
+      .btn svg {
+        width: 12px;
+        height: 12px;
+      }
+      .play-overlay-btn {
+        width: 36px;
+        height: 36px;
+      }
+      .play-overlay-btn svg {
+        width: 16px;
+        height: 16px;
+      }
+      .sb-content {
+        font-size: 0.72rem;
+      }
+      .sb-btn {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="landing-page" id="landingPage">
-
-    <!-- LOGO SECTION -->
-    <div class="logo-section">
-        <img
-            class="logo"
-            id="appLogo"
-            src="https://placehold.co/300x300/ffffff/111111?text=YOUR+LOGO"
-            alt="App Logo"
-        >
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <h1>VIRAL <span>VIDEO</span> ZONE</h1>
+      </a>
+      <div class="sub-heading">
+        <span class="live-dot"></span> TOP 10 TRENDING EXCLUSIVE VIDEOS
+      </div>
     </div>
+  </header>
 
-    <!-- APP NAME -->
-    <h1 class="app-name" id="appName">Diwa Bonus</h1>
+  <main class="container">
+    <!-- 1. Permanent Top Native Banner Ad -->
+    <section class="ad-banner-top" id="top-native-ad-container">
+      <!-- Injected via ADSTERRA_CONFIG.topNativeBannerCode -->
+    </section>
 
-    <!-- DESCRIPTION -->
-    <p class="description">
-        Download the app and follow the instructions
-        provided on the official download page.
-    </p>
+    <!-- 2-Column Responsive Video Grid -->
+    <section class="video-grid" id="main-video-grid">
+      <!-- 10 Video Cards & 2 Native Ads dynamically constructed here -->
+    </section>
+  </main>
 
-    <!-- DOWNLOAD BUTTON -->
-    <a href="https://example.com/download"
-       class="download-btn"
-       id="downloadButton">
-       ⬇ DOWNLOAD NOW
-    </a>
+  <!-- 4. Social Bar Ad (Mobile-optimized sticky footer) -->
+  <aside class="social-bar-container" id="social-bar-ad-container">
+    <!-- Injected via ADSTERRA_CONFIG.socialBarCode -->
+  </aside>
 
-    <!-- INFORMATION -->
-    <div class="info">
-        ✓ Mobile Friendly<br>
-        ✓ Easy Access<br>
-        ✓ Download Information
-    </div>
+  <!-- ==================== CORE FUNCTIONALITY SCRIPT ==================== -->
+  <script>
+    // State tracker for Popunder functionality (1st click -> Popunder, 2nd click -> configured URL)
+    const buttonClickTracker = {};
 
-    <!-- FOOTER -->
-    <div class="footer">
-        © 2026 Your App Name
-    </div>
+    /**
+     * Executes the Adsterra 2-step Popunder logic
+     * @param {Event} event - DOM click event
+     * @param {string} destinationUrl - The target URL for Watch Now or Download
+     * @param {string} trackerKey - Unique identifier for the card button
+     */
+    function handleMonetizedClick(event, destinationUrl, trackerKey) {
+      event.preventDefault();
 
-</div>
-
-<script>
-/* ==================================
-   EDIT YOUR SETTINGS HERE
-================================== */
-
-const APP_CONFIG = {
-    appName: "Diwa Bonus",
-
-    // Replace with your actual logo image URL
-    logoURL: "https://i.ibb.co/pjPqN0ks/IMG-ba31c7e2-dc78-48fc-b21e-b6450e5b519e.jpg",
-
-    // Replace with your actual download destination
-    downloadURL: "https://diwabonusshare.me?pid=324367481&channel=2010002&pkg=com.diwabonus002.com"
-};
-
-/* Apply settings */
-document.title = APP_CONFIG.appName + " - Download";
-
-document.getElementById("appName").textContent =
-    APP_CONFIG.appName;
-
-document.getElementById("appLogo").src =
-    APP_CONFIG.logoURL;
-
-document.getElementById("appLogo").alt =
-    APP_CONFIG.appName + " Logo";
-
-document.getElementById("downloadButton").href =
-    APP_CONFIG.downloadURL;
-
-/* Whole screen click redirect */
-document.getElementById("landingPage").addEventListener(
-    "click",
-    function(event) {
-
-        // Avoid duplicate handling of the download button
-        if (event.target.closest("#downloadButton")) {
-            return;
+      if (!buttonClickTracker[trackerKey]) {
+        // --- 1st Click: Open Adsterra Popunder ---
+        buttonClickTracker[trackerKey] = true;
+        
+        if (ADSTERRA_CONFIG.popunderUrl && ADSTERRA_CONFIG.popunderUrl.trim() !== "") {
+          window.open(ADSTERRA_CONFIG.popunderUrl, '_blank');
         }
 
-        // Ignore text selection and other unintended clicks
-        if (window.getSelection &&
-            window.getSelection().toString()) {
-            return;
-        }
+        // Visual feedback on the button
+        const btn = event.currentTarget;
+        const originalText = btn.innerHTML;
+        btn.style.filter = "brightness(1.25)";
+        btn.style.boxShadow = "0 0 14px var(--accent-red)";
+        
+        setTimeout(() => {
+          btn.style.filter = "";
+          btn.style.boxShadow = "";
+        }, 1500);
 
-        window.location.href = APP_CONFIG.downloadURL;
+      } else {
+        // --- 2nd Click: Redirect to Destination URL ---
+        if (destinationUrl && destinationUrl.trim() !== "") {
+          window.open(destinationUrl, '_blank');
+        }
+      }
     }
-);
-</script>
 
+    /**
+     * Helper to trigger popunder from generic ad elements
+     */
+    function triggerPopunder(event, targetUrl) {
+      event.preventDefault();
+      if (ADSTERRA_CONFIG.popunderUrl) {
+        window.open(ADSTERRA_CONFIG.popunderUrl, '_blank');
+      }
+      setTimeout(() => {
+        if (targetUrl && targetUrl !== "#") {
+          window.open(targetUrl, '_blank');
+        }
+      }, 200);
+    }
+
+    /**
+     * Temporarily displays a blurred GIF/video preview on thumbnail click,
+     * then smoothly reverts to the original thumbnail.
+     * @param {number} cardId - The ID of the video card
+     */
+    const previewTimers = {};
+
+    function toggleThumbnailPreview(cardId) {
+      const cardData = VIDEO_CONFIG.find(item => item.id === cardId);
+      if (!cardData) return;
+
+      const box = document.getElementById(`thumb-box-${cardId}`);
+      const img = document.getElementById(`thumb-img-${cardId}`);
+      const timerBar = document.getElementById(`timer-bar-${cardId}`);
+
+      if (!box || !img) return;
+
+      // If already previewing, cancel current timer and reset
+      if (previewTimers[cardId]) {
+        clearTimeout(previewTimers[cardId]);
+        delete previewTimers[cardId];
+      }
+
+      // Activate blurred preview state
+      box.classList.add('preview-active');
+      img.src = cardData.previewGifUrl;
+
+      // Animate progress bar
+      if (timerBar) {
+        timerBar.style.transition = 'none';
+        timerBar.style.width = '0%';
+        setTimeout(() => {
+          timerBar.style.transition = `width ${cardData.previewDuration}ms linear`;
+          timerBar.style.width = '100%';
+        }, 50);
+      }
+
+      // Schedule return to original thumbnail
+      previewTimers[cardId] = setTimeout(() => {
+        img.src = cardData.thumbnailUrl;
+        box.classList.remove('preview-active');
+        if (timerBar) {
+          timerBar.style.transition = 'none';
+          timerBar.style.width = '0%';
+        }
+        delete previewTimers[cardId];
+      }, cardData.previewDuration);
+    }
+
+    /**
+     * Builds and renders all 10 video cards and native banner ad slots
+     */
+    function renderWebsite() {
+      // 1. Inject Top Native Banner Ad
+      const topAdContainer = document.getElementById('top-native-ad-container');
+      if (topAdContainer && ADSTERRA_CONFIG.topNativeBannerCode) {
+        topAdContainer.innerHTML = ADSTERRA_CONFIG.topNativeBannerCode;
+      }
+
+      // 2. Inject Social Bar Ad
+      const socialBarContainer = document.getElementById('social-bar-ad-container');
+      if (socialBarContainer && ADSTERRA_CONFIG.socialBarCode) {
+        socialBarContainer.innerHTML = ADSTERRA_CONFIG.socialBarCode;
+      }
+
+      // 3. Render 10 Cards and In-Feed Native Ads into 2-Column Grid
+      const grid = document.getElementById('main-video-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      VIDEO_CONFIG.forEach((video, index) => {
+        // Create Video Card Element
+        const card = document.createElement('article');
+        card.className = 'video-card';
+        card.id = `video-card-${video.id}`;
+
+        card.innerHTML = `
+          <!-- 1. Video Title at Top -->
+          <div class="card-title-header">
+            <h2 class="video-title" title="${video.title}">${video.title}</h2>
+          </div>
+
+          <!-- 2. Video Thumbnail (Click for Blurred GIF Preview) -->
+          <div class="thumbnail-box" id="thumb-box-${video.id}" onclick="toggleThumbnailPreview(${video.id})" title="Click to preview video">
+            <img class="thumbnail-img" id="thumb-img-${video.id}" src="${video.thumbnailUrl}" alt="${video.title}" loading="lazy">
+            <div class="play-overlay-btn">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <div class="preview-badge">
+              <span class="preview-badge-dot"></span> PREVIEWING
+            </div>
+            <div class="preview-timer-bar" id="timer-bar-${video.id}"></div>
+          </div>
+
+          <!-- 3. Watch Now & 4. Download Buttons -->
+          <div class="card-actions">
+            <button class="btn btn-watch" onclick="handleMonetizedClick(event, '${video.watchUrl}', 'card_${video.id}_watch')" title="Watch Video">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+              <span>Watch Now</span>
+            </button>
+            <button class="btn btn-download" onclick="handleMonetizedClick(event, '${video.downloadUrl}', 'card_${video.id}_download')" title="Download Video">
+              <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+              <span>Download</span>
+            </button>
+          </div>
+        `;
+
+        grid.appendChild(card);
+
+        // Native Banner Ad 2: Placed between Video Cards 3 and 4 (After index 2)
+        if (index === 2) {
+          const adSlot2 = document.createElement('div');
+          adSlot2.className = 'in-feed-ad-card';
+          adSlot2.id = 'native-banner-2-wrapper';
+          adSlot2.innerHTML = ADSTERRA_CONFIG.nativeBanner2Code;
+          grid.appendChild(adSlot2);
+        }
+
+        // Native Banner Ad 3: Placed between Video Cards 7 and 8 (After index 6)
+        if (index === 6) {
+          const adSlot3 = document.createElement('div');
+          adSlot3.className = 'in-feed-ad-card';
+          adSlot3.id = 'native-banner-3-wrapper';
+          adSlot3.innerHTML = ADSTERRA_CONFIG.nativeBanner3Code;
+          grid.appendChild(adSlot3);
+        }
+      });
+    }
+
+    // Initialize layout when DOM is ready
+    document.addEventListener('DOMContentLoaded', renderWebsite);
+  </script>
 </body>
 </html>
